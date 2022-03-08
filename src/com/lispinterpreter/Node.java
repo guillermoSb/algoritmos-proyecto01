@@ -1,8 +1,32 @@
 package com.lispinterpreter;
+import java.util.ArrayList;
 
 public class Node<E> {
+    protected float dataF;
+    protected String dataS;
+    protected ArrayList<Node> lista;
+    protected int tipo;
     protected E data;   // Store the node data
     protected Node<E> nextElement; // Store a reference to the next element
+
+    public Node(float v)
+    {
+        dataF = v;
+        tipo = 1;
+    }
+
+    public Node(String v)
+    {
+        dataS =v;
+        tipo = 2;
+    }
+
+    public Node(ArrayList<Node> v)
+    {
+        lista = v;
+        tipo = 3;
+    }
+
 
     /**
      * Create a node with all the params.
