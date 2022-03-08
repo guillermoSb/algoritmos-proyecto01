@@ -20,15 +20,34 @@ public class Main {
             }
 
             // * 2. Parse the program (EVALUATE)
-            SimpleLinkedList<String> tokenList = LispParser.parseProgram(programString);
+            ArrayList<Node> tokenList = LispParser.separator(programString);
+
+            //  * 3. Suse recursivinness to show list
+            printTokens(tokenList, 0);
             // * 3. Print the result (PRINT)
-            while(!tokenList.isEmpty()) {
-                System.out.println(tokenList.removeFirst());
-            }
 
         } catch (Exception e) {
             e.printStackTrace();
         }
 
+    }
+    public static void printTokens(ArrayList<Node> tokens, int tabs) {
+
+        while (!tokens.isEmpty()) {
+            Node n = tokens.remove(0);
+            if (n.tipo == 1) {
+                for (int i = 0; i < tabs; i++) {
+                    System.out.print("  ");
+                }
+                System.out.printf("%f \n", n.dataF);
+            } else if (n.tipo == 2) {
+                for (int i = 0; i < tabs; i++) {
+                    System.out.print("  ");
+                }
+                System.out.printf("%s \n", n.dataS);
+            } else if (n.tipo == 3) {
+                printTokens(n.lista, tabs + 2);
+            }
+        }
     }
 }
