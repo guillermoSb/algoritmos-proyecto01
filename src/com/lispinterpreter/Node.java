@@ -2,6 +2,9 @@ package com.lispinterpreter;
 
 public class Node<E> {
     protected E data;   // Store the node data
+
+
+
     protected Node<E> nextElement; // Store a reference to the next element
 
     /**

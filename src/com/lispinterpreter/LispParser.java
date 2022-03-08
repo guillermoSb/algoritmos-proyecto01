@@ -12,7 +12,7 @@ public final class LispParser {
         for (int i = 0; i < program.split("").length; i++) {
             if (!program.split("")[i].equals(" ")) {
                 parsedProgram.add(program.split("")[i]);
-                System.out.printf("Added to the list: %s \n", program.split("")[i] );
+//                System.out.printf("Added to the list: %s \n", program.split("")[i] );
             }
         }
         return parsedProgram;

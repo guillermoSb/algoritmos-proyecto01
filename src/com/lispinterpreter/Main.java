@@ -12,16 +12,17 @@ public class Main {
             File program = new File("program.lisp");
             Scanner scanner = new Scanner(program); // Scanner to load the file data
             String programString = "";
+
             // * 1.1 Go through all the lines on the program
             while(scanner.hasNextLine()) {
                 programString = scanner.nextLine();
             }
-            SimpleLinkedList<String> tokenList = LispParser.parseProgram(programString);
 
             // * 2. Parse the program (EVALUATE)
-            VectorStack<String> data = new VectorStack<>();
+            SimpleLinkedList<String> tokenList = LispParser.parseProgram(programString);
+            // * 3. Print the result (PRINT)
             while(!tokenList.isEmpty()) {
-
+                System.out.println(tokenList.removeFirst());
             }
 
         } catch (Exception e) {
