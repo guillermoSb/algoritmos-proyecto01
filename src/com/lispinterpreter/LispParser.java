@@ -1,5 +1,8 @@
 package com.lispinterpreter;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 public final class LispParser {
 
     /**
@@ -17,5 +20,14 @@ public final class LispParser {
         }
         return parsedProgram;
 
+    }
+
+    /**Método para separar por tokens en un ArrayLists */
+    public static ArrayList<String> Separador(String program) {
+        String[] programa= program.split("");
+        ArrayList<String> tokensList= new ArrayList<String>(Arrays.asList(programa));
+        System.out.println("The arraylist:" + tokensList);
+        return tokensList;
+            
     }
 }
