@@ -2,10 +2,12 @@ package com.lispinterpreter;
 import java.util.ArrayList;
 
 public class Node<E> {
+
     protected float dataF;
     protected String dataS;
     protected ArrayList<Node> lista;
     protected int tipo;
+
     protected E data;   // Store the node data
 
 

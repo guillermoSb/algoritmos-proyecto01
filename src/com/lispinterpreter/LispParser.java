@@ -2,8 +2,11 @@ package com.lispinterpreter;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 
 public final class LispParser {
+
+
 
     private static ArrayList<Node> parsedProgram = new ArrayList<Node>();
 
@@ -40,6 +43,11 @@ public final class LispParser {
         return parsedProgram;
     }
 
+    /**
+     * Checks if a value is a number
+     * @param value
+     * @return
+     */
     private static boolean isNumber(String value) {
         try {
             Double number = Double.parseDouble(value);
