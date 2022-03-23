@@ -14,7 +14,7 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-        LispEvaluator evaluator = new LispEvaluator();
+        LispInterpreter interpreter = new LispInterpreter();    // Interpreter
         Scanner scan = new Scanner(System.in);
         String exp = "";    // Variable to store the user input
 
@@ -28,10 +28,10 @@ public class Main {
             validExpression = validateExpression(exp);
             if (!validExpression) {
                 System.out.println("La expresion ingresada no es valida");
+                continue;
             }
             exp = cleanExpression(exp);
-            System.out.println(exp);
-
+            System.out.println(interpreter.processExpression(LispParser.separator(exp)).dataF); // Process the expression and show result
         }
     }
 

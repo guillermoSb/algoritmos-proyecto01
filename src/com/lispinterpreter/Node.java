@@ -3,7 +3,7 @@ import java.util.ArrayList;
 
 public class Node<E> {
 
-    protected float dataF;
+    protected double dataF;
     protected String dataS;
     protected ArrayList<Node> lista;
     protected int tipo;
@@ -14,7 +14,7 @@ public class Node<E> {
 
     protected Node<E> nextElement; // Store a reference to the next element
 
-    public Node(float v)
+    public Node(double v)
     {
         dataF = v;
         tipo = 1;

@@ -34,27 +34,13 @@ public final class LispParser {
                 parsedProgram.add(node);
             } else if (t.equals(")")) {
                 return parsedProgram;
-            } else if (isNumber(t)) {
+            } else if (LispInterpreter.isNumber(t)) {
                 parsedProgram.add(new Node(Float.parseFloat(t)));
             } else {
                 parsedProgram.add(new Node(t));
             }
         }
         return parsedProgram;
-    }
-
-    /**
-     * Checks if a value is a number
-     * @param value
-     * @return
-     */
-    private static boolean isNumber(String value) {
-        try {
-            Double number = Double.parseDouble(value);
-            return true;
-        } catch (Exception e) {
-            return  false;
-        }
     }
 
 }
