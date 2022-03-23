@@ -3,6 +3,8 @@ package com.lispinterpreter;
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.util.ArrayList;
+
 public class LispInterpreterTest {
     @Test
     public void testProcessExpression() {
@@ -22,5 +24,17 @@ public class LispInterpreterTest {
         Assert.assertTrue(result == 14.0);
     }
 
+
+    @Test
+    public void testFunction() {
+        LispInterpreter interpreter = new LispInterpreter();
+        String expression = "(defun sum (n1 n2) ( * n1 n2))";
+        expression = Main.cleanExpression(expression);
+        Node result = interpreter.processExpression(LispParser.separator(expression));
+        String expression2 = "(sum 10 10)";
+        expression2 = Main.cleanExpression(expression2);
+        Node result2 = interpreter.processExpression(LispParser.separator(expression2));
+
+    }
 
 }

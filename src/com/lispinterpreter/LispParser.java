@@ -6,11 +6,6 @@ import java.util.HashMap;
 
 public final class LispParser {
 
-
-
-    private static ArrayList<Node> parsedProgram = new ArrayList<Node>();
-
-
     /** Method to separate the program as an Array List */
     public static ArrayList<Node> separator(String program) {
         String[] programa= program.split(" ");

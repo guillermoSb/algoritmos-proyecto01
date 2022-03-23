@@ -31,7 +31,13 @@ public class Main {
                 continue;
             }
             exp = cleanExpression(exp);
-            System.out.println(interpreter.processExpression(LispParser.separator(exp)).dataF); // Process the expression and show result
+            Node result = interpreter.processExpression(LispParser.separator(exp));
+            if (result.tipo == 1) {
+                System.out.println(result.dataF); // Process the expression and show result
+            } else if (result.tipo == 2) {
+                System.out.println(result.dataS); // Process the expression and show result
+            }
+
         }
     }
 
