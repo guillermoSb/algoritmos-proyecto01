@@ -45,6 +45,11 @@ public class LispInterpreter {
         return expResult;   // Return the expected result
     }
 
+    /**
+     * Method that processes functions
+     * @param tokens
+     * @return
+     */
     public Node processFunction(ArrayList<Node> tokens) {
         ArrayList<Node> paramsList = new ArrayList<>();   // Array list to save params
         Node function = functions.get(tokens.get(0).dataS); // Get the function from the tokens
@@ -69,6 +74,11 @@ public class LispInterpreter {
         return null;
     }
 
+    /**
+     * Method that saves a function
+     * @param tokens
+     * @return
+     */
     public String saveFunction(ArrayList<Node> tokens) {
         String funcName = "";
         ArrayList<Node> funcContent = new ArrayList<>();
